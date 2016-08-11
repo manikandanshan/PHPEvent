@@ -1,0 +1,266 @@
+$(document).ready(function(){
+	$("#fullname").blur(function(){
+		if(!$("#fullname").val()){		
+			$("#fullnamemessage").text("*Name is required");									
+		}					
+		else {
+			$("#fullnamemessage").hide();
+		}
+	});	
+	
+	
+	$("#branch").click(function(){
+		if(!$('[name=gender]:checked').length){
+			$("#gendervalidationmessage").text("*Gender is required");									
+		}					
+		else {
+			$("#gendervalidationmessage").hide();
+		}
+		if($('[name=gender]:checked').length | !$('[name=training]:checked').length){
+			$("#trainingmessage").text("*Training is required");	
+		}
+		if($('[name=training]:checked').length)  {
+			$("#trainingmessage").hide();
+		}
+	});
+
+	
+	$("#branch").blur(function(){
+		if(!$("#branch").val()){		
+			$("#branchmessage").text("*Branch is required");									
+		}					
+		else {
+			$("#branchmessage").hide();
+		}		
+	});	
+	
+	$("#marks").blur(function(){
+		if(!$("#marks").val()){		
+			$("#marksmessage").text("*Marks is required");									
+		}					
+		else {
+			$("#marksmessage").hide();
+		}
+	});
+	
+	$("#university").blur(function(){
+		if(!$("#university").val()){		
+			$("#universitymessage").text("*University is required");									
+		}					
+		else {
+			$("#universitymessage").hide();
+		}
+	});	
+	
+	$("#dobmm").blur(function(){
+		var dobmm = $('#dobmm option:selected').val();
+		var dobdd = $('#dobdd option:selected').val();
+		var dobyy = $('#dobyy option:selected').val();
+		if(dobmm == ""){		
+			$("#dobmessage").text("*DOB is required");									
+		}				
+		else if(!dobmm == "" & !dobdd == "" & !dobyy == "" ){
+			$("#dobmessage").hide();
+		}
+	});
+	
+	$("#dobdd").blur(function(){
+		var dobdd = $('#dobdd option:selected').val();
+		var dobmm = $('#dobmm option:selected').val();
+		var dobyy = $('#dobyy option:selected').val();
+		
+		if(dobdd == ""){		
+			$("#dobmessage").text("*DOB is required");									
+		}		
+		else if(!dobmm == "" & !dobdd == "" & !dobyy == "" ){
+			$("#dobmessage").hide();
+		}
+	});
+	
+	$("#dobyy").blur(function(){
+		var dobdd = $('#dobdd option:selected').val();
+		var dobmm = $('#dobmm option:selected').val();
+		var dobyy = $('#dobyy option:selected').val();
+		if(dobyy == ""){		
+			$("#dobmessage").text("*DOB is required");									
+		}			
+		else if(!dobmm == "" & !dobdd == "" & !dobyy == "" ){
+			$("#dobmessage").hide();
+		}
+	});
+	
+	$("#address").click(function(){
+		var dobdd = $('#dobdd option:selected').val();
+		var dobmm = $('#dobmm option:selected').val();
+		var dobyy = $('#dobyy option:selected').val();
+		if(dobyy == ""){		
+			$("#dobmessage").text("*DOB is required");									
+		}			
+		else if(!dobmm == "" & !dobdd == "" & !dobyy == "" ){
+			$("#dobmessage").hide();
+		}
+	});
+	
+	$("#address").blur(function(){
+		if(!$("#address").val()){		
+			$("#addressmessage").text("*Address is required");									
+		}					
+		else {
+			$("#addressmessage").hide();
+		}
+	});
+	
+	$("#email").blur(function(){
+		if(!$("#email").val()){		
+			$("#emailmessage").text("*Email is required");									
+		}					
+		else {
+			$("#emailmessage").hide();
+			
+		}
+	});
+	
+	$("#resume").blur(function(){
+		if(!$("#resume").val()){		
+			$("#resumemessage").text("*Resume is required");									
+		}					
+		else {
+			$("#resumemessage").hide();
+		}
+	});
+	
+	$("#6_letters_code").blur(function(){
+		if(!$("#6_letters_code").val()){		
+			$("#captchamessage").text("*Captcha is required");									
+		}
+		else if($("#6_letters_code").val() != $("#captchaimg").val()){		
+			$("#captchamessage").text("Incorrect captcha");									
+		}
+		else {
+			$("#captchamessage").hide();
+		}
+	});
+
+		
+	$("#year").blur(function(){
+		if(!$("#year").val()){		
+			$("#yearmessage").text("*Year is required");									
+			}
+		else if($("#year").val().length < 4){		
+			$("#yearmessage").text("Minimum value is required");									
+			}					
+		else {
+			$("#yearmessage").hide();
+		}
+	});
+			
+	$("#mobilenum").blur(function(){
+		if(!$("#mobilenum").val()){		
+			$("#mobilenummessage").text("*Mobile is required");									
+		}
+		else if($("#mobilenum").val().length < 10){		
+			$("#mobilenummessage").text("Enter 10 digit mobile number");									
+		}					
+		else {
+			$("#mobilenummessage").hide();
+		}
+	});	
+		
+	
+    $("#button").click(function(){
+	    var dobmm = $('#dobmm option:selected').val();
+		var dobdd = $('#dobdd option:selected').val();
+		var dobyy = $('#dobyy option:selected').val();
+		
+       if(!$("#fullname").val()) {
+			$("#fullnamemessage").text("*Name is required").show();
+		}
+
+	   if(!$('[name=gender]:checked').length) {
+			$("#gendervalidationmessage").text("*Gender is required").show();
+		}
+		
+	   if(!$('[name=training]:checked').length ){
+			$("#trainingmessage").text("*Training is required").show();
+	   }
+	   
+	   if(!$("#branch").val()){
+			$("#branchmessage").text("*Branch is required").show();
+		}
+	   if(!$("#year").val()){
+			$("#yearmessage").text("*Year is required").show();
+		}
+ 
+		if(!$("#marks").val()){
+			$("#marksmessage").text("*Marks is required").show();
+		}
+		if(!$("#university").val()){
+			$("#universitymessage").text("*University is required").show();
+		}
+		if((dobmm == "") |  (dobdd == "")  | (dobyy == "") ){
+			$("#dobmessage").text("*DOB is required").show();		
+		}		
+		if(!$("#address").val()){
+			$("#addressmessage").text("*Address is required").show();
+		}
+		if(!$("#email").val()){
+			$("#emailmessage").text("*Email is required").show();
+		}
+		if(!$("#mobile").val()){
+			$("#mobilemessage").text("*Mobile is required").show();
+		}
+		if(!$("#resume").val()){
+			$("#resumemessage").text("*Resume is required").show();
+		}
+		if(!$("#6_letters_code").val()) {		
+			$("#captchamessage").text("*Captcha is required").show(); 
+		}
+		
+		
+		/*$.ajax({
+                type: 'POST',
+                url: 'nameverification.php',
+                success: function(data) {
+				
+				var email = $("#email").val();
+                    
+                    if(data == email  ) {
+						$("h2").text("user exists").show();
+					}
+					if(data=="" & email=="" ){
+						$("h2").text(data).show();
+					}
+					else{
+						$("h2").text("error").show();
+					}
+                }				
+		});	*/
+		
+	});	
+	
+	
+function emailverify(){	
+	$.ajax({
+                type: 'POST',
+                url: 'nameverification.php',
+                success: function(data) {
+				
+				var email = $("#email").val();
+                    
+                    if(data == email  ) {
+						$("h2").text("user exists").show();
+					}
+					if(data=="" & email=="" ){
+						$("h2").text(data).show();
+					}
+					else{
+						$("h2").text("error").show();
+					}
+                }				
+		});
+}
+    
+});
+
+
+
